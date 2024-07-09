@@ -1,0 +1,509 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    box-sizing: border-box
+}
+
+
+:root{
+
+    --BODY-COLOR :rgb(237, 237, 237);
+    --BG-COLOR:rgb(255, 255, 255);
+    --SEARCH-BOX-BC---CLICK-BC--COLOR : rgb(226, 226, 226);
+    --TRANSPARENT-COLOR:transparent;
+
+    --LINK-TEXT--OR--LINK-BTN-COLOR:BLUE;
+
+    --S-TEXT-COLOR:rgb(157, 157, 157);
+    --M-TEXT-COLOR:rgb(130, 130, 130);
+    --L-TEXT-COLOR:rgb(0, 0, 0);
+
+    --BOX-BORDER-RADIUS:5px;
+    --LINK-BOX-BORDER-RADIUS:100px;
+    --IMG-BRODER-RADIUS:50%;
+    --MAIN-BORDER-COLOR:rgb(200, 200, 200);
+    --SECONDRY-BORDER-COLOR:rgb(144, 144, 144);
+
+    --BOX-SHOWEO:rgba(0,0,0,0.15) 0 4px 12px ;
+
+}
+
+.nothanks{
+    box-shadow: var(--BOX-SHOWEO);
+    background-color: var(--BODY-COLOR);
+    border: 1px solid black;
+}
+
+.sText{
+    color: var(--S-TEXT-COLOR);
+}
+.mText{
+    color: var(--M-TEXT-COLOR);
+}
+.lText{
+    color: var(--L-TEXT-COLOR);
+}
+
+.Name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: var(--BODY-COLOR);
+
+    display: grid;
+
+    grid-template-columns: 2fr  1fr;
+    grid-template-areas: 
+        " nav nav "
+        "main aside "
+    ;
+    gap: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+
+/* --- Nav menu and logo --- */
+
+.nav{
+    background-color: var(--BG-COLOR) ;
+    box-shadow: var(--BOX-SHOWEO);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+
+    grid-area: nav;
+}
+
+.nav_profile{
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_profile-pic ,.nav_profile-search{
+    width: 30%;
+}
+.nav_profile-pic-img{
+    width: 100%;
+    /* border-radius: var(--IMG-BRODER-RADIUS); */
+}
+
+.nav_profile-search{
+    padding: 0.5rem;
+}
+.nav_profile-search input{
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
+    border-radius: var(--BOX-BORDER-RADIUS);
+    border: 1px solid transparent;
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+
+}
+.nav_menu{
+    display: flex;
+    width: 60%;
+}
+
+.nav_menu div ,.nav_menu h6{
+    width: 70%;
+    height: 98%;
+    color: var(--M-TEXT-COLOR);
+    align-content: center;
+    text-align: center;
+    border-bottom: 2px solid var(--TRANSPARENT-COLOR);
+    
+}
+
+.nav_menu h6:hover{
+    
+    color: var(--L-TEXT-COLOR);
+    border-bottom: 0.2rem solid black;
+}
+
+
+/* --main-- */
+
+main{
+    background-color: transparent;
+    position: relative;
+}
+
+.main_messagingBox{
+    background-color: var(--BG-COLOR);
+    width: 90%;
+    position: absolute;
+    left: 10%;
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    grid-template-areas: 
+        " search search search search"  
+        "menu menu menu menu"  
+        "messagerInfo messagerInfo messageBox messageBox"
+    ;
+    border-radius: var(--BOX-BORDER-RADIUS);
+    box-shadow: var(--BOX-SHOWEO);
+    gap: 0.1rem;
+}
+
+.main_messagingBox-common{
+    padding: 0.5rem 1rem;
+    background-color: var(--BG-COLOR);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+.main_messagingBox-common-all{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+    
+}
+
+.main_messagingBox-search{
+    grid-area: search;
+    justify-content: space-between;
+    border-radius: var(--BOX-BORDER-RADIUS) var(--BOX-BORDER-RADIUS) 0 0;
+}
+
+
+.main_messagingBox-search-option input{
+    border: 1px solid transparent;
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+    border-radius: var(--BOX-BORDER-RADIUS);
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+
+}
+            /* -------------------- */
+
+.main_messagingBox-menu{
+    grid-area: menu;
+    justify-content: flex-start;
+    
+}
+
+.main_messagingBox-menu-main-choose{
+    border: 2px solid var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+    padding: 0.5rem 1rem;
+    border-radius: var(--LINK-BOX-BORDER-RADIUS);
+}
+
+
+.main_messagingBox-menu-main-chooseClick , .m-m-menu-m-cclick{
+    background: green;
+    color: white;
+}
+
+            /* ------------------- */
+
+.main_messagingBox-meassagerInfo{
+    grid-area:messagerInfo ;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    max-height: 30rem;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    /* border: 0.5px solid var(--SEARCH-BOX-BC---CLICK-BC--COLOR ); */
+}
+
+.main_messagingBox-meassagerInfo-prosen{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-left: 0.3rem solid transparent;
+}
+
+.main_messagingBox-meassagerInfo-prosen hr{
+    border: 0.5px solid var(--SEARCH-BOX-BC---CLICK-BC--COLOR);
+    position: absolute;
+    width: 74.3%;
+    bottom: 0;
+}
+
+.main_messagingBox-meassagerInfo-prosen-pic{
+    width: 20%;
+}
+.main_messagingBox-meassagerInfo-prosen-pic-img{
+    width: 100%;
+    border-radius: var(--IMG-BRODER-RADIUS);
+}
+
+.main_messagingBox-meassagerInfo-prosen-picgroup{
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.main_messagingBox-meassagerInfo-prosen-pic-groupImg{
+    width: 45%;
+    border-radius: var(--IMG-BRODER-RADIUS);
+}
+
+.main_messagingBox-meassagerInfo-prosen-info{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+.main_messagingBox-meassagerInfo-prosen-info-deatils{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_messagingBox-meassagerInfo .main_messagingBox-meassagerInfo-prosenClick{
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+    border-left: 0.3rem solid green;
+
+}
+            /* ------------------- */
+
+.main_messagingBox-messageBox{
+    grid-area: messageBox;
+    background-color: var(--BG-COLOR);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0;
+
+}
+
+.main_messagingBox-messageBox-devalery{
+    width: 100%;
+
+}
+
+.main_messagingBox-messageBox-devalery-personInfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--SEARCH-BOX-BC---CLICK-BC--COLOR );
+}
+
+.main_messagingBox-messageBox-devalery-personInfo-name{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.main_messagingBox-messageBox-devalery-personInfo-edit{
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main_messagingBox-messageBox-devalery-chatbox {
+    padding: 1rem;
+    height: 10rem;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: auto;
+    scrollbar-width: none;
+    height: 250px;
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-common , .mbdc{ 
+    display: flex;
+    width: 100%;
+
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-send ,.main_messagingBox-messageBox-devalery-chatbox-send-img , .mbdcs-i{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-receive ,.main_messagingBox-messageBox-devalery-chatbox-receive-img , .sbdcr-i{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-common-message ,.main_messagingBox-messageBox-devalery-chatbox-common-img , .scdccm-i{
+    max-width:80%;
+    padding: 0.5rem;
+    border-radius: var(--BOX-BORDER-RADIUS);
+    border: 1px solid var(--SEARCH-BOX-BC---CLICK-BC--COLOR);
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-common-img , .sbdcc-i{
+    box-shadow: var(--BOX-SHOWEO);
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-img-pic ,.sbdcc-ip{
+    width: 100%;
+    border-radius: var(--BOX-BORDER-RADIUS);
+}
+
+.main_messagingBox-messageBox-devalery-chatbox-send-contant , .main_messagingBox-messageBox-devalery-chatbox-send-img-contant ,.sbdcds-i{
+    text-align: end;
+}
+.main_messagingBox-messageBox-devalery-chatbox-receive-contant ,.main_messagingBox-messageBox-devalery-chatbox-receive-img-contant ,.sbdcdr-i{
+    text-align: start;
+}
+
+    /* ------------------- */
+
+.main_messagingBox-messageBox-text {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.main_messagingBox-messageBox-text{
+    padding: 0.5rem;
+}
+
+.main_messagingBox-messageBox-text-box{
+    width: 90%;
+}
+
+.main_messagingBox-messageBox-text-box-write{
+    background-color: var(--SEARCH-BOX-BC---CLICK-BC--COLOR);
+    width: 95%;
+    height: 100px;
+    padding: 0.5rem;    
+    border: none;
+    border-radius: var(--BOX-BORDER-RADIUS);
+    text-align: start;
+}
+
+.main_messagingBox-messageBox-text-bth{
+    /* background-color: red; */
+    width: 10%;
+}
+
+.main_messagingBox-messageBox-upload{
+    width: 100%;
+}
+
+.main_messagingBox-messageBox-upload-btn{
+    display:flex;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+    gap: 1rem;
+    
+}
+
+
+/* -------------------- */
+.aside{
+    grid-area: aside;
+}
+
+.aside_common{
+    width: 80%;
+    background-color: var(--TRANSPARENT-COLOR);
+}
+
+.aside_common-same{
+    box-shadow: var(--BOX-SHOWEO);
+    margin: 0  0 1rem 0;
+    padding: 1rem;
+    background-color: var(--BG-COLOR);
+    border-radius: var(--BOX-BORDER-RADIUS);
+
+}
+
+.aside_drapdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aside_promotrd{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+}
+
+.aside_promotrd-profile{
+    background-image: url(/imgsize/300B.jpeg);
+    background-size: 100% 65%;
+    background-repeat: no-repeat;
+    margin-top: 0.5rem;
+}
+
+.aside_promotrd-profile-pic{
+    margin: 1rem 1rem 0 1rem;
+    width: 25%;
+    border: var(--BG-COLOR) solid 2px;
+}
+.aside_promotrd-profile-promotrd{
+    position: absolute;
+    color:var(--M-TEXT-COLOR);
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--BG-COLOR);
+    border-radius: var(--BOX-BORDER-RADIUS);
+    padding: 0.3rem;
+}
+
+.aside_promotrd-detils{
+    padding: 0 1rem 1rem 1rem;
+}
+.aside_promotrd-detils-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.aside_followBtn{
+    margin: 0.5rem 0;
+    text-align: center;
+    padding: 0.5rem;
+    border: var(--LINK-TEXT--OR--LINK-BTN-COLOR) solid 2px;
+    border-radius: var(--LINK-BOX-BORDER-RADIUS);
+    color: var(--LINK-TEXT--OR--LINK-BTN-COLOR);
+}
+
+/* -----------Footer------------- */
+
+.footer{
+    text-align: center;
+}
+.footer-common{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+.footer-common-link{
+    gap: 1rem;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* ---------------------------------- */
+
